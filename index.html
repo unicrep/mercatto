@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontMarket</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">FontMarket</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#intro-tipografia">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tipografias">Tipografías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="intro-tipografia" class="d-flex align-items-center justify-content-center">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12">
+                    <h1 id="dynamic-letter" class="dynamic-text">
+                        Montserrat
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sección de Glifos -->
+    <section id="glyph-section" class="py-5 d-flex flex-column align-items-center">
+        <div class="container text-center">
+            <h2 class="text-center mb-4">Visualizador de Glifos Interactivo</h2>
+
+            <!-- Pesos de la fuente como enlaces -->
+            <div class="font-weight-buttons text-center mb-4">
+                <a href="#" class="col" data-weight="100">Thin</a>
+                <a href="#" class="col" data-weight="200">Extra Light</a>
+                <a href="#" class="col" data-weight="300">Light</a>
+                <a href="#" class="col" data-weight="400">Regular</a>
+                <a href="#" class="col" data-weight="500">Medium</a>
+                <a href="#" class="col" data-weight="600">Semi Bold</a>
+                <a href="#" class="col" data-weight="700">Bold</a>
+                <a href="#" class="col" data-weight="800">Extra Bold</a>
+                <a href="#" class="col" data-weight="900">Black</a>
+            </div>
+
+            <div class="glyph-container">
+                <!-- JavaScript will dynamically populate this section -->
+            </div>
+            <div class="large-view hidden">
+                <input type="text" id="largeGlyph" value="A" aria-label="Editable Glyph" />
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    <!-- Sección de Tipografías -->
+    <section id="tipografias" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h3 class="card-title" style="font-family: 'Roboto', sans-serif;">Roboto</h3>
+                            <p class="card-text">Una tipografía moderna y versátil.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h3 class="card-title" style="font-family: 'Lobster', cursive;">Lobster</h3>
+                            <p class="card-text">Elegante y llamativa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h3 class="card-title" style="font-family: 'Montserrat', sans-serif;">Montserrat</h3>
+                            <p class="card-text">Limpia y profesional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section id="galeria" class="py-5 bg-dark text-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Galería</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card bg-dark text-light border-0">
+                        <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Proyecto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyecto 1</h5>
+                            <p class="card-text">Descripción del proyecto 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark text-light border-0">
+                        <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Proyecto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyecto 2</h5>
+                            <p class="card-text">Descripción del proyecto 2.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Sobre Nosotros</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>En FontMarket nos especializamos en ofrecer tipografías de alta calidad que inspiran y potencian tus proyectos creativos.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/500x300" alt="Sobre Nosotros" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contacto</h2>
+            <form id="contact-form" class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nombre" class="form-label">Tu Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Tu Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Tu Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Información de Derechos -->
+                <div class="col-12 mb-3">
+                    <p>&copy; 2024 FontMarket. Todos los derechos reservados.</p>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="col-12">
+                    <a href="https://facebook.com" target="_blank" class="mx-2 text-light" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="mx-2 text-light" aria-label="Twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="mx-2 text-light" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="mx-2 text-light" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
