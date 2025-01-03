@@ -1,9 +1,6 @@
-body{
+body {
     background-color: rgb(33 37 41);
     font-family: 'Montserrat', sans-serif;
-
-            
-           
 }
 
 /* Navbar */
@@ -56,28 +53,53 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Evitar que el contenido se salga del contenedor */
+    position: relative; /* Posicionar para el fondo */
 }
 
+/* Estilos del H1 */
 #dynamic-letter {
-    font-size: 120px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 90px; /* Ajuste para tamaño móvil */
+    font-family: 'Bricolage Grotesque', sans-serif;
     color: #FFD401;
     display: inline-block;
     position: relative;
-    transition: transform 0.5s ease-in-out;
+    z-index: 2; /* Asegura que el texto esté sobre la imagen */
+    transition: font-size 0.3s ease-in-out;
 }
 
 #dynamic-letter span {
     opacity: 0;
-    transform: translateY(50px) scale(0.8) rotate(10deg);
+    transform: translateY(50px) scale(0.8); /* Movimiento inicial */
     display: inline-block;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 #dynamic-letter span.visible {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(0);
+    transform: translateY(0) scale(1); /* Movimiento final */
 }
+
+/* Fondo dinámico */
+#background-dynamic {
+    position: absolute;
+    top: 60px; /* Ajusta la posición para que no quede tapado por el menú */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Reduce la altura total para acomodar el desplazamiento */
+    background-image: url('../IMG/background_dinamico.png'); /* Ruta de tu imagen */
+    background-blend-mode: multiply;
+
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.1s ease-out, opacity 0.3s ease; /* Suavidad en el movimiento y cambio de opacidad */
+    z-index: 1; /* Debajo del texto */
+    opacity: 0.5; /* Reduce la intensidad de la imagen */
+    filter: brightness(80%); /* Reduce el brillo para que se camufle mejor */
+}
+
 
 
 
@@ -163,6 +185,89 @@ body{
     border-color: #FFD401;
 }
 
+
+
+
+
+.letter-container {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 8rem;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.bg-roboto {
+    background-color: #47277A;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-playfair {
+    background-color: #FFD401;
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-lobster {
+    background-color: #47277A;
+    font-family: 'Lobster', cursive;
+}
+
+.bg-montserrat {
+    background-color: #FFD401;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.letter-container:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    animation: underline 0.3s ease-in-out;
+}
+
+@keyframes underline {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.letter-container span {
+    display: inline-block;
+    animation: float 3s infinite ease-in-out;
+}
+
+.letter-container:hover span {
+    animation: bounce 0.6s infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
 @media (max-width: 576px) {
     #dynamic-letter {
         font-size: 60px;
@@ -172,9 +277,19 @@ body{
     }
 }
 
+@media (max-width: 768px) {
+    #dynamic-letter {
+        font-size: 60px; /* Reducir tamaño en pantallas pequeñas */
+    }
+    .font-weight-buttons a {
+        font-size: 14px;
+        padding: 3px 10px;
+    }
+}
+
 @media (min-width: 992px) {
     #dynamic-letter {
-        font-size: 140px;
+        font-size: 120px;
     }
     .font-weight-buttons {
         flex-wrap: nowrap;
@@ -182,11 +297,6 @@ body{
     }
 }
 
-@media (max-width: 768px) {
-    .font-weight-buttons a {
-        font-size: 14px;
-        padding: 3px 10px;
-    }
-}
+
 
 

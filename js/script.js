@@ -8,7 +8,7 @@ $(document).ready(function () {
         }
     });
 
-    const text = "Montserrat";
+    const text = "Bricolage Grotesque";
     const dynamicLetter = $("#dynamic-letter");
 
     // Inicializamos el texto como letras individuales
@@ -43,9 +43,18 @@ $(document).ready(function () {
         }
     });
 
+    // Animación del fondo en función del movimiento del ratón con mayor rango
+    const background = $("#background-dynamic");
+    $(document).on("mousemove", function (e) {
+        const x = ((e.clientX / $(window).width()) - 0.5) * 50; // Incrementamos el rango a 50px
+        const y = ((e.clientY / $(window).height()) - 0.5) * 50; // Incrementamos el rango a 50px
+        background.css("transform", `translate(${x}px, ${y}px)`);
+    });
+
     // Disparo inicial por si ya está visible
     $(window).trigger("scroll");
 });
+
 
 
 $(document).ready(function() {
@@ -70,4 +79,16 @@ $(document).ready(function() {
         const weight = $(this).data("weight");
         $("#glyph-section .glyph-container, #glyph-section .large-view").css("font-weight", weight);
     });
+});
+
+
+$(document).ready(function() {
+    $('.letter-container').hover(
+        function() {
+            $(this).css('background-color', '#222').css('transform', 'scale(1.2)');
+        },
+        function() {
+            $(this).css('background-color', '').css('transform', 'scale(1)');
+        }
+    );
 });
