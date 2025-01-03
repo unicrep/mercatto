@@ -71,3 +71,45 @@ $(document).ready(function() {
         $("#glyph-section .glyph-container, #glyph-section .large-view").css("font-weight", weight);
     });
 });
+
+
+// Seccion variable 
+
+$(document).ready(function() {
+    const $weightSlider = $('#weightSlider');
+    const $sizeSlider = $('#sizeSlider');
+    const $letters = $('#variableText span');
+    const $weightValue = $('#weightValue');
+    const $sizeValue = $('#sizeValue');
+
+    // Cambiar peso de la tipografía
+    $weightSlider.on('input', function() {
+      const weight = $(this).val();
+      $letters.each(function() {
+        $(this).css('font-variation-settings', `'wght' ${weight}`);
+      });
+      $weightValue.text(weight);
+    });
+
+    // Cambiar tamaño de la tipografía
+    $sizeSlider.on('input', function() {
+      const size = $(this).val();
+      $letters.each(function() {
+        $(this).css('font-size', `${size}px`);
+      });
+      $sizeValue.text(size);
+    });
+
+    // Cambiar la fuente
+    $('#fontRoboto').on('click', function() {
+      $letters.css('font-family', 'Roboto Flex, sans-serif');
+    });
+
+    $('#fontRecursive').on('click', function() {
+      $letters.css('font-family', 'Recursive, sans-serif');
+    });
+
+    $('#fontInter').on('click', function() {
+        $letters.css('font-family', 'Inter, sans-serif');
+      });
+  });

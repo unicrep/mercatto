@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -72,8 +77,51 @@
         </div>
     </section>
 
+    <!-- ______________________________________________________________________ -->
+
+    <!-- Seccion de fuente variable -->
+
+    <section id="variable">
+        <div class="variable-text" id="variableText">
+          <span>V</span>
+          <span>A</span>
+          <span>R</span>
+          <span>I</span>
+          <span>A</span>
+          <span>B</span>
+          <span>L</span>
+          <span>E</span>
+        </div>
+        <input 
+          type="range" 
+          id="weightSlider" 
+          min="100" 
+          max="900" 
+          step="1" 
+          value="400"
+        >
+        <div class="slider-label">Peso: <span id="weightValue">400</span></div>
+    
+        <input 
+          type="range" 
+          id="sizeSlider" 
+          min="50" 
+          max="200" 
+          step="1" 
+          value="100"
+        >
+        <div class="slider-label">Tamaño: <span id="sizeValue">100</span> px</div>
+    
+        <div class="btn-group" role="group">
+            <button type="button" class="btn" id="fontRoboto">Roboto Flex</button>
+            <button type="button" class="btn" id="fontRecursive">Recursive</button>
+            <button type="button" class="btn" id="fontInter">Inter</button>
+        </div>
+      </section>
+
     
     
+    <!-- ____________________________________________________________________________ -->
 
     <!-- Sección de Tipografías -->
     <section id="tipografias" class="py-5 bg-light">
