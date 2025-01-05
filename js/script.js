@@ -58,40 +58,40 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-            const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
-            const container = $(".glyph-container");
-            const largeGlyph = $("#largeGlyph");
+    // Funcionalidad para mostrar/ocultar la sección de glifos
+    $(".toggle-button").on("click", function () {
+        $("#glyph-section").slideToggle();
+    });
 
-            // Rellenar los glifos
-            for (let glyph of glyphs) {
-                container.append(`<div class='glyph-item'>${glyph}</div>`);
-            }
+    const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
+    const container = $(".glyph-container");
+    const largeGlyph = $("#largeGlyph");
 
-            // Cambiar el glifo grande al hacer clic
-            $(".glyph-item").on("click", function () {
-                const selectedGlyph = $(this).text();
-                largeGlyph.val(selectedGlyph);
-            });
+    // Rellenar los glifos dinámicamente
+    for (let glyph of glyphs) {
+        container.append(`<div class='glyph-item'>${glyph}</div>`);
+    }
 
-            // Cambiar peso de fuente
-            $(".font-weight-buttons a").on("click", function (e) {
-                e.preventDefault();
-                const weight = $(this).data("weight");
-                $("#glyph-section .glyph-container, #glyph-section .large-view").css("font-weight", weight);
-            });
+    // Cambiar el glifo grande al hacer clic
+    $(".glyph-item").on("click", function () {
+        const selectedGlyph = $(this).text();
+        largeGlyph.val(selectedGlyph);
+    });
 
-            // Mostrar/Ocultar Sección Interactiva
-            $(".toggle-button").on("click", function () {
-                $(".font-weight-buttons, .glyph-container, .large-view, .font-selector").slideToggle();
-            });
+    // Cambiar peso de fuente
+    $(".font-weight-buttons a").on("click", function (e) {
+        e.preventDefault();
+        const weight = $(this).data("weight");
+        $("#glyph-section .glyph-container, #glyph-section .large-view")
+            .css("font-weight", weight);
+    });
 
-            // Cambiar Tipografía
-            $("#font-select").on("change", function () {
-                const selectedFont = $(this).val();
-                $("#glyph-section").css("font-family", selectedFont);
-            });
-        });
-
+    // Cambiar Tipografía (opcional, si usas el selector)
+    $("#font-select").on("change", function () {
+        const selectedFont = $(this).val();
+        $("#glyph-section").css("font-family", selectedFont);
+    });
+});
 
 $(document).ready(function() {
     $('.letter-container').hover(
@@ -156,3 +156,7 @@ $(document).ready(function () {
         $(this).find('span').removeAttr('style');
     });
 });
+
+
+
+
