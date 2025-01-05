@@ -57,29 +57,40 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function() {
-    const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
-    const container = $(".glyph-container");
-    const largeGlyph = $("#largeGlyph");
+$(document).ready(function () {
+            const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
+            const container = $(".glyph-container");
+            const largeGlyph = $("#largeGlyph");
 
-    // Populate the glyph container with grid structure
-    for (let glyph of glyphs) {
-        container.append(`<div class='glyph-item'>${glyph}</div>`);
-    }
+            // Rellenar los glifos
+            for (let glyph of glyphs) {
+                container.append(`<div class='glyph-item'>${glyph}</div>`);
+            }
 
-    // Click event for displaying the glyph
-    $(".glyph-item").on("click", function() {
-        const selectedGlyph = $(this).text();
-        largeGlyph.val(selectedGlyph);
-    });
+            // Cambiar el glifo grande al hacer clic
+            $(".glyph-item").on("click", function () {
+                const selectedGlyph = $(this).text();
+                largeGlyph.val(selectedGlyph);
+            });
 
-    // Change font weight on link click
-    $(".font-weight-buttons a").on("click", function(e) {
-        e.preventDefault();
-        const weight = $(this).data("weight");
-        $("#glyph-section .glyph-container, #glyph-section .large-view").css("font-weight", weight);
-    });
-});
+            // Cambiar peso de fuente
+            $(".font-weight-buttons a").on("click", function (e) {
+                e.preventDefault();
+                const weight = $(this).data("weight");
+                $("#glyph-section .glyph-container, #glyph-section .large-view").css("font-weight", weight);
+            });
+
+            // Mostrar/Ocultar Sección Interactiva
+            $(".toggle-button").on("click", function () {
+                $(".font-weight-buttons, .glyph-container, .large-view, .font-selector").slideToggle();
+            });
+
+            // Cambiar Tipografía
+            $("#font-select").on("change", function () {
+                const selectedFont = $(this).val();
+                $("#glyph-section").css("font-family", selectedFont);
+            });
+        });
 
 
 $(document).ready(function() {
@@ -91,4 +102,57 @@ $(document).ready(function() {
             $(this).css('background-color', '').css('transform', 'scale(1)');
         }
     );
+});
+
+
+$(document).ready(function () {
+    console.log("jQuery cargado correctamente.");
+
+    // Evitar crecimiento visual al pasar el ratón
+    $('.letter-container').on('mouseenter', function () {
+        $(this).css({
+            borderWidth: '3px', // Mantiene el borde fijo
+            boxShadow: '0 0 15px rgba(255, 212, 1, 0.5)', // Resplandor fijo
+        });
+    });
+
+    $('.letter-container').on('mouseleave', function () {
+        $(this).css({
+            borderWidth: '3px',
+            boxShadow: 'none', // Elimina el resplandor al salir
+        });
+    });
+
+    // Animaciones personalizadas sin cambio de tamaño
+    $('.anchor-effect').on('mouseenter', function () {
+        $(this).find('span').css({
+            textShadow: '0 0 10px #FFD401, 0 0 20px #FFD401',
+        });
+    });
+
+    $('.three-d-effect').on('mouseenter', function () {
+        $(this).find('span').css({
+            transform: 'perspective(500px) rotateY(15deg)',
+            textShadow: '3px 3px 10px rgba(255, 212, 1, 0.7)',
+        });
+    });
+
+    $('.custom-effect-1').on('mouseenter', function () {
+        $(this).find('span').css({
+            background: 'linear-gradient(90deg, #FFD401, #47277A)',
+            '-webkit-background-clip': 'text',
+            color: 'transparent',
+        });
+    });
+
+    $('.custom-effect-2').on('mouseenter', function () {
+        $(this).find('span').css({
+            textShadow: '0 0 15px #FFD401, 0 0 30px #FFD401',
+        });
+    });
+
+    // Restablecer al salir
+    $('.letter-container').on('mouseleave', function () {
+        $(this).find('span').removeAttr('style');
+    });
 });

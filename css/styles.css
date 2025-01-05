@@ -1,6 +1,8 @@
 body {
     background-color: rgb(33 37 41);
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+
 }
 
 /* Navbar */
@@ -88,9 +90,8 @@ body {
     left: 0;
     width: 100%;
     height: calc(100% - 50px); /* Reduce la altura total para acomodar el desplazamiento */
-    background-image: url('../IMG/background_dinamico.png'); /* Ruta de tu imagen */
+    background-image: url('../IMG/background2.png'); /* Ruta de tu imagen */
     background-blend-mode: multiply;
-
     background-size: cover; /* Cubre todo el contenedor */
     background-position: center;
     background-repeat: no-repeat;
@@ -104,10 +105,8 @@ body {
 
 
 
-
-
 #glyph-section {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .glyph-container {
@@ -187,87 +186,118 @@ body {
 
 
 
-
-
-.letter-container {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 8rem;
+@font-face {
+    font-family: 'Basteleur-Moonlight';
+    src: url('../FONTS/Basteleur-Moonlight.woff2') format('woff2');
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outward-round';
+    src: url('../FONTS/outward-round-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pilowlava-Regula';
+    src: url('../FONTS/Pilowlava-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pilowlava-Regular';
+    src: url('../FONTS/Gulax-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.hover-area {
     position: relative;
-    cursor: pointer;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 20px auto;
+    border: 3px solid transparent;
+    background-color: rgb(33, 37, 41);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bg-roboto {
-    background-color: #47277A;
-    font-family: 'Roboto', sans-serif;
+.hover-area:hover {
+    border-color: #FFD401;
+    box-shadow: 0 0 15px rgba(255, 212, 1, 0.5);
 }
 
-.bg-playfair {
-    background-color: #FFD401;
-    font-family: 'Playfair Display', serif;
+.hover-area .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 3rem; /* Tamaño uniforme para todas las secciones */
+    transition: transform 0.3s ease;
 }
 
-.bg-lobster {
-    background-color: #47277A;
-    font-family: 'Lobster', cursive;
+.hover-area .content span {
+    font-size: 3rem; /* Tamaño fijo para evitar inconsistencias */
 }
 
-.bg-montserrat {
-    background-color: #FFD401;
-    font-family: 'Montserrat', sans-serif;
+.hover-area:hover .content {
+    transform: translateY(-10px);
 }
 
-.letter-container:hover::after {
-    content: '';
+.hover-area .hover-child {
+    color: #FFD401;
+    opacity: 0;
+    font-size: 1.5rem; /* Tamaño del subtítulo */
+    transition: opacity 0.3s ease;
+}
+
+.hover-area:hover .hover-child {
+    opacity: 1;
+}
+
+.hover-area .background {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
-    background-color: white;
-    animation: underline 0.3s ease-in-out;
+    height: 100%;
+    background: rgba(255, 212, 1, 0.1);
+    z-index: -1;
+    transition: opacity 0.3s ease;
 }
 
-@keyframes underline {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 100%;
-    }
+.hover-area:hover .background {
+    opacity: 0.5;
 }
 
-.letter-container span {
-    display: inline-block;
-    animation: float 3s infinite ease-in-out;
+/* Estilo Tipográfico */
+.bg-basteleur-bold {
+    font-family: 'Basteleur-Bold', sans-serif;
 }
 
-.letter-container:hover span {
-    animation: bounce 0.6s infinite;
+.bg-outward-round {
+    font-family: 'Outward-Round', sans-serif;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+.bg-pilowlava-regular {
+    font-family: 'Pilowlava-Regular', cursive;
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
+.bg-basteleur-moonlight {
+    font-family: 'Basteleur-Moonlight', sans-serif;
 }
+
+
+
 @media (max-width: 576px) {
     #dynamic-letter {
         font-size: 60px;
