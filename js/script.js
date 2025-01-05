@@ -8,7 +8,7 @@ $(document).ready(function () {
         }
     });
 
-    const text = "Montserrat";
+    const text = "Bricolage Grotesque";
     const dynamicLetter = $("#dynamic-letter");
 
     // Inicializamos el texto como letras individuales
@@ -43,31 +43,116 @@ $(document).ready(function () {
         }
     });
 
+    // Animación del fondo en función del movimiento del ratón con mayor rango
+    const background = $("#background-dynamic");
+    $(document).on("mousemove", function (e) {
+        const x = ((e.clientX / $(window).width()) - 0.5) * 50; // Incrementamos el rango a 50px
+        const y = ((e.clientY / $(window).height()) - 0.5) * 50; // Incrementamos el rango a 50px
+        background.css("transform", `translate(${x}px, ${y}px)`);
+    });
+
     // Disparo inicial por si ya está visible
     $(window).trigger("scroll");
 });
 
 
+
+$(document).ready(function () {
+            const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
+            const container = $(".glyph-container");
+            const largeGlyph = $("#largeGlyph");
+
+            // Rellenar los glifos
+            for (let glyph of glyphs) {
+                container.append(`<div class='glyph-item'>${glyph}</div>`);
+            }
+
+            // Cambiar el glifo grande al hacer clic
+            $(".glyph-item").on("click", function () {
+                const selectedGlyph = $(this).text();
+                largeGlyph.val(selectedGlyph);
+            });
+
+            // Cambiar peso de fuente
+            $(".font-weight-buttons a").on("click", function (e) {
+                e.preventDefault();
+                const weight = $(this).data("weight");
+                $("#glyph-section .glyph-container, #glyph-section .large-view").css("font-weight", weight);
+            });
+
+            // Mostrar/Ocultar Sección Interactiva
+            $(".toggle-button").on("click", function () {
+                $(".font-weight-buttons, .glyph-container, .large-view, .font-selector").slideToggle();
+            });
+
+            // Cambiar Tipografía
+            $("#font-select").on("change", function () {
+                const selectedFont = $(this).val();
+                $("#glyph-section").css("font-family", selectedFont);
+            });
+        });
+
+
 $(document).ready(function() {
-    const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
-    const container = $(".glyph-container");
-    const largeGlyph = $("#largeGlyph");
+    $('.letter-container').hover(
+        function() {
+            $(this).css('background-color', '#222').css('transform', 'scale(1.2)');
+        },
+        function() {
+            $(this).css('background-color', '').css('transform', 'scale(1)');
+        }
+    );
+});
 
-    // Populate the glyph container with grid structure
-    for (let glyph of glyphs) {
-        container.append(`<div class='glyph-item'>${glyph}</div>`);
-    }
 
-    // Click event for displaying the glyph
-    $(".glyph-item").on("click", function() {
-        const selectedGlyph = $(this).text();
-        largeGlyph.val(selectedGlyph);
+$(document).ready(function () {
+    console.log("jQuery cargado correctamente.");
+
+    // Evitar crecimiento visual al pasar el ratón
+    $('.letter-container').on('mouseenter', function () {
+        $(this).css({
+            borderWidth: '3px', // Mantiene el borde fijo
+            boxShadow: '0 0 15px rgba(255, 212, 1, 0.5)', // Resplandor fijo
+        });
     });
 
-    // Change font weight on link click
-    $(".font-weight-buttons a").on("click", function(e) {
-        e.preventDefault();
-        const weight = $(this).data("weight");
-        $("#glyph-section .glyph-container, #glyph-section .large-view").css("font-weight", weight);
+    $('.letter-container').on('mouseleave', function () {
+        $(this).css({
+            borderWidth: '3px',
+            boxShadow: 'none', // Elimina el resplandor al salir
+        });
+    });
+
+    // Animaciones personalizadas sin cambio de tamaño
+    $('.anchor-effect').on('mouseenter', function () {
+        $(this).find('span').css({
+            textShadow: '0 0 10px #FFD401, 0 0 20px #FFD401',
+        });
+    });
+
+    $('.three-d-effect').on('mouseenter', function () {
+        $(this).find('span').css({
+            transform: 'perspective(500px) rotateY(15deg)',
+            textShadow: '3px 3px 10px rgba(255, 212, 1, 0.7)',
+        });
+    });
+
+    $('.custom-effect-1').on('mouseenter', function () {
+        $(this).find('span').css({
+            background: 'linear-gradient(90deg, #FFD401, #47277A)',
+            '-webkit-background-clip': 'text',
+            color: 'transparent',
+        });
+    });
+
+    $('.custom-effect-2').on('mouseenter', function () {
+        $(this).find('span').css({
+            textShadow: '0 0 15px #FFD401, 0 0 30px #FFD401',
+        });
+    });
+
+    // Restablecer al salir
+    $('.letter-container').on('mouseleave', function () {
+        $(this).find('span').removeAttr('style');
     });
 });

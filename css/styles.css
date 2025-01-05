@@ -1,9 +1,8 @@
-body{
+body {
     background-color: rgb(33 37 41);
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
 
-            
-           
 }
 
 /* Navbar */
@@ -20,7 +19,7 @@ body{
     font-size: 0.9rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.8);
-    border-bottom: 3px solid  rgb(231, 76, 60);
+    border-bottom: 3px solid #FFD401;
 }
 
 .navbar-brand {
@@ -56,36 +55,58 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Evitar que el contenido se salga del contenedor */
+    position: relative; /* Posicionar para el fondo */
 }
 
+/* Estilos del H1 */
 #dynamic-letter {
-    font-size: 120px;
-    font-family: 'Montserrat', sans-serif;
-    color: #ff5722;
+    font-size: 90px; /* Ajuste para tamaño móvil */
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: #FFD401;
     display: inline-block;
     position: relative;
-    transition: transform 0.5s ease-in-out;
+    z-index: 2; /* Asegura que el texto esté sobre la imagen */
+    transition: font-size 0.3s ease-in-out;
 }
 
 #dynamic-letter span {
     opacity: 0;
-    transform: translateY(50px) scale(0.8) rotate(10deg);
+    transform: translateY(50px) scale(0.8); /* Movimiento inicial */
     display: inline-block;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 #dynamic-letter span.visible {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(0);
+    transform: translateY(0) scale(1); /* Movimiento final */
+}
+
+/* Fondo dinámico */
+#background-dynamic {
+    position: absolute;
+    top: 60px; /* Ajusta la posición para que no quede tapado por el menú */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Reduce la altura total para acomodar el desplazamiento */
+    background-image: url('../IMG/background2.png'); /* Ruta de tu imagen */
+    background-blend-mode: multiply;
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.1s ease-out, opacity 0.3s ease; /* Suavidad en el movimiento y cambio de opacidad */
+    z-index: 1; /* Debajo del texto */
+    opacity: 0.5; /* Reduce la intensidad de la imagen */
+    filter: brightness(80%); /* Reduce el brillo para que se camufle mejor */
 }
 
 
 
 
 
-
 #glyph-section {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .glyph-container {
@@ -101,7 +122,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 60px;
-    border: 1px solid #ff5722;
+    border: 1px solid #47277A;
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
@@ -110,7 +131,7 @@ body{
 }
 
 .glyph-item:hover {
-    background-color: #e94f1e;
+    background-color: #FFD401;
     color: #1a1a1a;
     transform: scale(1.1);
 }
@@ -122,7 +143,7 @@ body{
     margin-top: 40px;
     width: 100%;
     height: 200px;
-    border-top: 1px solid #e94f1e;
+    border-top: 1px solid #FFD401;
     font-size: 100px;
     font-weight: bold;
     cursor: text;
@@ -131,7 +152,7 @@ body{
 .large-view input {
     background: none;
     border: none;
-    color: #e94f1e;
+    color: #FFD401;
     font-size: inherit;
     font-weight: inherit;
     text-align: center;
@@ -147,7 +168,7 @@ body{
 }
 
 .font-weight-buttons a {
-    color: #e94f1e;
+    color: #FFD401;
     font-size: 18px;
     text-decoration: none;
     position: relative;
@@ -159,9 +180,123 @@ body{
 
 .font-weight-buttons a:hover {
     color: #000;
-    background-color: #e94f1e;
-    border-color: #e94f1e;
+    background-color: #FFD401;
+    border-color: #FFD401;
 }
+
+
+
+@font-face {
+    font-family: 'Basteleur-Moonlight';
+    src: url('../FONTS/Basteleur-Moonlight.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outward-round';
+    src: url('../FONTS/outward-round-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pilowlava-Regula';
+    src: url('../FONTS/Pilowlava-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pilowlava-Regular';
+    src: url('../FONTS/Gulax-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.hover-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 20px auto;
+    border: 3px solid transparent;
+    background-color: rgb(33, 37, 41);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-area:hover {
+    border-color: #FFD401;
+    box-shadow: 0 0 15px rgba(255, 212, 1, 0.5);
+}
+
+.hover-area .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 3rem; /* Tamaño uniforme para todas las secciones */
+    transition: transform 0.3s ease;
+}
+
+.hover-area .content span {
+    font-size: 3rem; /* Tamaño fijo para evitar inconsistencias */
+}
+
+.hover-area:hover .content {
+    transform: translateY(-10px);
+}
+
+.hover-area .hover-child {
+    color: #FFD401;
+    opacity: 0;
+    font-size: 1.5rem; /* Tamaño del subtítulo */
+    transition: opacity 0.3s ease;
+}
+
+.hover-area:hover .hover-child {
+    opacity: 1;
+}
+
+.hover-area .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 212, 1, 0.1);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.hover-area:hover .background {
+    opacity: 0.5;
+}
+
+/* Estilo Tipográfico */
+.bg-basteleur-bold {
+    font-family: 'Basteleur-Bold', sans-serif;
+}
+
+.bg-outward-round {
+    font-family: 'Outward-Round', sans-serif;
+}
+
+.bg-pilowlava-regular {
+    font-family: 'Pilowlava-Regular', cursive;
+}
+
+.bg-basteleur-moonlight {
+    font-family: 'Basteleur-Moonlight', sans-serif;
+}
+
+
 
 @media (max-width: 576px) {
     #dynamic-letter {
@@ -172,9 +307,19 @@ body{
     }
 }
 
+@media (max-width: 768px) {
+    #dynamic-letter {
+        font-size: 60px; /* Reducir tamaño en pantallas pequeñas */
+    }
+    .font-weight-buttons a {
+        font-size: 14px;
+        padding: 3px 10px;
+    }
+}
+
 @media (min-width: 992px) {
     #dynamic-letter {
-        font-size: 140px;
+        font-size: 120px;
     }
     .font-weight-buttons {
         flex-wrap: nowrap;
@@ -182,11 +327,6 @@ body{
     }
 }
 
-@media (max-width: 768px) {
-    .font-weight-buttons a {
-        font-size: 14px;
-        padding: 3px 10px;
-    }
-}
+
 
 
