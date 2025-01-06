@@ -105,7 +105,6 @@ body {
 
 
 
-
 #glyph-section {
     font-family: 'Bricolage Grotesque', sans-serif;
 }
@@ -160,6 +159,7 @@ body {
     width: 100%;
     outline: none;
 }
+
 
 .font-weight-buttons {
     display: flex;

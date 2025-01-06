@@ -70,28 +70,43 @@
     
 
 
-    <section id="glyph-section" class="py-5 d-flex flex-column align-items-center">
-        <div class="container text-center">
-            <h2 class="text-center mb-4">Visualizador de Glifos Interactivo</h2>
-    
-            <!-- Pesos de la fuente como enlaces -->
-            <div class="font-weight-buttons text-center mb-4">
-                <a href="#" class="col" data-weight="300">Light</a>
-                <a href="#" class="col" data-weight="400">Regular</a>
-                <a href="#" class="col" data-weight="500">Medium</a>
-                <a href="#" class="col" data-weight="600">Semi Bold</a>
-                <a href="#" class="col" data-weight="700">Bold</a>
-                <a href="#" class="col" data-weight="800">Extra Bold</a>
-            </div>
-    
-            <div class="glyph-container">
-                <!-- JavaScript dynamically populates this section -->
-            </div>
-            <div class="large-view hidden">
-                <input type="text" id="largeGlyph" value="A" aria-label="Editable Glyph" />
-            </div>
+    !-- Botón para mostrar/ocultar la sección -->
+<button class="toggle-button">Mostrar/Ocultar Sección de Glifos</button>
+
+<!-- Sección oculta por defecto con style="display: none;" -->
+<section id="glyph-section" class="py-5 d-flex flex-column align-items-center" style="display: none;">
+    <div class="container text-center">
+        <h2 class="text-center mb-4">Visualizador de Glifos Interactivo</h2>
+
+        <!-- Pesos de la fuente como enlaces -->
+        <div class="font-weight-buttons text-center mb-4">
+            <a href="#" class="col" data-weight="300">Light</a>
+            <a href="#" class="col" data-weight="400">Regular</a>
+            <a href="#" class="col" data-weight="500">Medium</a>
+            <a href="#" class="col" data-weight="600">Semi Bold</a>
+            <a href="#" class="col" data-weight="700">Bold</a>
+            <a href="#" class="col" data-weight="800">Extra Bold</a>
         </div>
-    </section>
+
+        <!-- Selector de tipografía (opcional, si quieres permitir cambiar la fuente) -->
+        <div class="font-selector text-center mb-4">
+            <label for="font-select">Elige una tipografía:</label>
+            <select id="font-select">
+                <option value="'Bricolage Grotesque', sans-serif">Bricolage Grotesque</option>
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+            </select>
+        </div>
+
+        <div class="glyph-container">
+            <!-- JavaScript dinamicamente poblará esta sección -->
+        </div>
+
+        <div class="large-view">
+            <input type="text" id="largeGlyph" value="A" aria-label="Editable Glyph" />
+        </div>
+    </div>
+</section>
 
     
     <section class="container py-5">

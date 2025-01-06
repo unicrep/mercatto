@@ -58,19 +58,14 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    // Funcionalidad para mostrar/ocultar la sección de glifos
-    $(".toggle-button").on("click", function () {
-        $("#glyph-section").slideToggle();
-    });
+            const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
+            const container = $(".glyph-container");
+            const largeGlyph = $("#largeGlyph");
 
-    const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
-    const container = $(".glyph-container");
-    const largeGlyph = $("#largeGlyph");
-
-    // Rellenar los glifos dinámicamente
-    for (let glyph of glyphs) {
-        container.append(`<div class='glyph-item'>${glyph}</div>`);
-    }
+            // Rellenar los glifos
+            for (let glyph of glyphs) {
+                container.append(`<div class='glyph-item'>${glyph}</div>`);
+            }
 
     // Cambiar el glifo grande al hacer clic
     $(".glyph-item").on("click", function () {
