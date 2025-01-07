@@ -417,6 +417,11 @@ body {
         transition: transform 0.3s ease;
     }
     
+    .container {
+        color: white;
+    }
+
+
     /* Define specific positions for each line */
     .line:nth-child(1)  { left: 4%;  height: 15%; bottom: 0%; }
     .line:nth-child(2)  { left: 6%; height: 20%; bottom: 0%; }
