@@ -296,6 +296,10 @@ body {
     font-family: 'Basteleur-Moonlight', sans-serif;
 }
 
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: #212529 !important;
+}
 
 /* SECCION SLIDERS */
 
