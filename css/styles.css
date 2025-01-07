@@ -297,6 +297,257 @@ body {
 }
 
 
+/* SECCION SLIDERS */
+
+#variable {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .variable-text {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+
+  .variable-text span {
+    font-size: 100px;
+    font-variation-settings: 'wght' 400;
+    transition: all 0.2s ease;
+    color: #FFD401;;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 300px;
+    height: 10px;
+    background: #FFD401;;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+
+  input[type="range"]:hover {
+    opacity: 1;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #FFD401;;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background: #ffe0d4;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #FFD401;;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  input[type="range"]::-moz-range-thumb:hover {
+    background: #ffe0d4;
+  }
+
+  .slider-label {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .btn-group {
+    margin-top: 20px;
+  }
+
+  .btn{
+    color: #FFD401;;
+    height: 60px;
+    border: 1px solid #FFD401;;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .btn:hover{ 
+        color: #000;
+        background-color: #FFD401;;
+        border-color: #FFD401;;
+    }
+
+    /* SECCION EFECTO LETRAS Aa */
+
+    #letter-a-effect{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .text-container,
+    .text-container-2 {
+        position: relative;
+        width: 400px;
+        height: 400px;
+    }
+    
+    /* General styles for lines */
+    .line {
+        position: absolute;
+        width: 4px;
+        background-color:#FFD401;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+    
+    /* Define specific positions for each line */
+    .line:nth-child(1)  { left: 4%;  height: 15%; bottom: 0%; }
+    .line:nth-child(2)  { left: 6%; height: 20%; bottom: 0%; }
+    .line:nth-child(3)  { left: 8%; height: 25%; bottom: 0%; }
+    .line:nth-child(4)  { left: 10%; height: 30%; bottom: 0%; }
+    .line:nth-child(5)  { left: 12%; height: 35%; bottom: 0%; }
+    .line:nth-child(6)  { left: 14%; height: 35%; bottom: 5%; }
+    .line:nth-child(7)  { left: 16%; height: 35%; bottom: 10%; }
+    .line:nth-child(8)  { left: 18%; height: 35%; bottom: 15%; }
+    .line:nth-child(9)  { left: 20%; height: 35%; bottom: 20%; }
+    .line:nth-child(10) { left: 22%; height: 35%; bottom: 25%; }
+    .line:nth-child(11) { left: 24%; height: 35%; bottom: 30%; }
+    
+    .line:nth-child(12) { left: 26%; height: 10%; bottom: 20%; }
+    .line:nth-child(13) { left: 28%; height: 10%; bottom: 20%; }
+    .line:nth-child(14) { left: 30%; height: 10%; bottom: 20%; }
+    .line:nth-child(15) { left: 32%; height: 10%; bottom: 20%; }
+    .line:nth-child(16) { left: 34%; height: 10%; bottom: 20%; }
+    .line:nth-child(17) { left: 36%; height: 10%; bottom: 20%; }
+    .line:nth-child(18) { left: 38%; height: 10%; bottom: 20%; }
+    .line:nth-child(19) { left: 40%; height: 10%; bottom: 20%; }
+    
+    
+    .line:nth-child(20) { left: 26%; height: 35%; bottom: 35%; }
+    .line:nth-child(21) { left: 28%; height: 35%; bottom: 40%; }
+    .line:nth-child(22) { left: 30%; height: 35%; bottom: 45%; }
+    .line:nth-child(23) { left: 32%; height: 35%; bottom: 50%; }
+    .line:nth-child(24) { left: 34%; height: 35%; bottom: 55%; }
+    .line:nth-child(25) { left: 36%; height: 30%; bottom: 60%; }
+    .line:nth-child(26) { left: 38%; height: 25%; bottom: 65%; }
+    .line:nth-child(27) { left: 40%; height: 20%; bottom: 70%; }
+    
+    
+    .line:nth-child(28) { left: 42%; height: 10%; bottom: 20%; }
+    .line:nth-child(29) { left: 44%; height: 10%; bottom: 20%; }
+    .line:nth-child(30) { left: 46%; height: 10%; bottom: 20%; }
+    .line:nth-child(31) { left: 48%; height: 10%; bottom: 20%; }
+    .line:nth-child(32) { left: 50%; height: 10%; bottom: 20%; }
+    .line:nth-child(33) { left: 52%; height: 10%; bottom: 20%; }
+    .line:nth-child(34) { left: 54%; height: 10%; bottom: 20%; }
+    .line:nth-child(35) { left: 56%; height: 10%; bottom: 20%; }
+    
+    .line:nth-child(36) { left: 42%; height: 20%; bottom: 70%; }
+    .line:nth-child(37) { left: 44%; height: 25%; bottom: 65%; }
+    .line:nth-child(38) { left: 46%; height: 30%; bottom: 60%; }
+    .line:nth-child(39) { left: 48%; height: 35%; bottom: 55%; }
+    .line:nth-child(40) { left: 50%; height: 35%; bottom: 50%; }
+    .line:nth-child(41) { left: 52%; height: 35%; bottom: 45%; }
+    .line:nth-child(42) { left: 54%; height: 35%; bottom: 40%; }
+    .line:nth-child(43) { left: 56%; height: 35%; bottom: 35%; }
+    
+    
+    
+    .line:nth-child(44) { left: 58%; height: 35%; bottom: 30%; }
+    .line:nth-child(45) { left: 60%; height: 35%; bottom: 25%; }
+    .line:nth-child(46)  { left: 62%; height: 35%; bottom: 20%; }
+    .line:nth-child(47)  { left: 64%; height: 35%; bottom: 15%; }
+    .line:nth-child(48)  { left: 66%; height: 35%; bottom: 10%; }
+    .line:nth-child(49)  { left: 68%; height: 35%; bottom: 5%; }
+    .line:nth-child(50)  { left: 70%; height: 35%; bottom: 0%; }
+    .line:nth-child(51)  { left: 72%; height: 30%; bottom: 0%; }
+    .line:nth-child(52)  { left: 74%; height: 25%; bottom: 0%; }
+    .line:nth-child(53)  { left: 76%; height: 20%; bottom: 0%; }
+    .line:nth-child(54)  { left: 78%;  height: 15%; bottom: 0%; }
+    
+    
+    
+    
+    
+    .text-container-2 .line:nth-child(1)  { left: 24%;  height: 15%; bottom: 20%; }
+    .text-container-2 .line:nth-child(2)  { left: 26%; height: 25%; bottom: 15%; }
+    .text-container-2 .line:nth-child(3)  { left: 28%; height: 35%; bottom: 10%; }
+    .text-container-2 .line:nth-child(4)  { left: 30%; height: 45%; bottom: 5%; }
+    .text-container-2 .line:nth-child(5)  { left: 32%; height: 55%; bottom: 0%; }
+    .text-container-2 .line:nth-child(6)  { left: 34%; height: 25%; bottom: 0%; }
+    .text-container-2 .line:nth-child(7)  { left: 34%; height: 20%; bottom: 35%; }
+    .text-container-2 .line:nth-child(8)  { left: 36%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(9)  { left: 36%; height: 20%; bottom: 40%; }
+    .text-container-2 .line:nth-child(10) { left: 38%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(11) { left: 38%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(12) { left: 40%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(13) { left: 40%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(14) { left: 42%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(15) { left: 42%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(16) { left: 44%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(17) { left: 44%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(18) { left: 46%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(19) { left: 46%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(20) { left: 48%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(21) { left: 48%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(22) { left: 50%; height: 15%; bottom: 5%; }
+    .text-container-2 .line:nth-child(23) { left: 50%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(24) { left: 52%; height: 15%; bottom: 10%; }
+    .text-container-2 .line:nth-child(25) { left: 52%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(26) { left: 54%; height: 15%; bottom: 10%; }
+    .text-container-2 .line:nth-child(27) { left: 54%; height: 15%; bottom: 45%; }
+    .text-container-2 .line:nth-child(28) { left: 56%; height: 15%; bottom: 15%; }
+    .text-container-2 .line:nth-child(29) { left: 56%; height: 10%; bottom: 40%; }
+    .text-container-2 .line:nth-child(30) { left: 58%; height: 15%; bottom: 20%; }
+    .text-container-2 .line:nth-child(31) { left: 58%; height: 10%; bottom: 35%; }
+    .text-container-2 .line:nth-child(32) { left: 60%; height: 75%; bottom: 15%; }
+    .text-container-2 .line:nth-child(33) { left: 62%; height: 75%; bottom: 10%; }
+    .text-container-2 .line:nth-child(34) { left: 64%; height: 75%; bottom: 5%; }
+    .text-container-2 .line:nth-child(35) { left: 66%; height: 75%; bottom: 0%; }
+    .text-container-2 .line:nth-child(36) { left: 68%; height: 70%; bottom: 0%; }
+    .text-container-2 .line:nth-child(37) { left: 70%; height: 65%; bottom: 0%; }
+    .text-container-2 .line:nth-child(38) { left: 72%; height: 25%; bottom: 0%; }
+    .text-container-2 .line:nth-child(39) { left: 74%; height: 20%; bottom: 0%; }
+    .text-container-2 .line:nth-child(40) { left: 76%; height: 15%; bottom: 0%; }
+    .text-container-2 .line:nth-child(41) { left: 78%; height: 10%; bottom: 0%; }
+    .text-container-2 .line:nth-child(42) { left: 80%; height: 5%; bottom: 0%; }
+    
+    .text-container-2 .line:nth-child(43) { left: 58%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(44) { left: 56%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(45) { left: 54%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(46) { left: 52%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(47) { left: 50%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(48) { left: 48%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(49) { left: 46%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(50) { left: 44%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(51) { left: 42%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(52) { left: 40%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(53) { left: 38%; height: 15%; bottom: 75%; }
+    .text-container-2 .line:nth-child(54) { left: 36%; height: 15%; bottom: 70%; }
+    .text-container-2 .line:nth-child(55) { left: 34%; height: 15%; bottom: 70%; }
+    .text-container-2 .line:nth-child(56) { left: 32%; height: 15%; bottom: 65%; }
+    .text-container-2 .line:nth-child(57) { left: 30%; height: 20%; bottom: 60%; }
+    .text-container-2 .line:nth-child(58) { left: 28%; height: 15%; bottom: 60%; }
+    
+
+
+
+
+
+
 
 @media (max-width: 576px) {
     #dynamic-letter {
