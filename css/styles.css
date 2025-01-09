@@ -2,7 +2,6 @@ body {
     background-color: rgb(33 37 41);
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    
 
 }
 
@@ -18,7 +17,7 @@ body {
 .navbar.shrink {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px #00000080;
     background-color: rgba(0, 0, 0, 0.8);
     border-bottom: 3px solid #FFD401;
 }
@@ -102,7 +101,10 @@ body {
     filter: brightness(80%); /* Reduce el brillo para que se camufle mejor */
 }
 
-
+#glyph-section h2,
+#variable h2{
+    color: #FFD401;
+}
 
 
 #glyph-section {
@@ -135,6 +137,21 @@ body {
     color: #1a1a1a;
     transform: scale(1.1);
 }
+
+label{
+    color: #FFD401;
+}
+
+
+#font-select{
+    color: #FFD401;
+    background-color:rgb(33 37 41);
+    height: 60px;
+    border: 1px solid #FFD401;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
 
 .large-view {
     display: flex;
@@ -297,10 +314,47 @@ body {
     font-family: 'Basteleur-Moonlight', sans-serif;
 }
 
-.bg-light {
-    --bs-bg-opacity: 1;
-    background-color: #212529 !important;
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
+
+.modal-content {
+    background-color:#FFD401;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.hover-child {
+    cursor: pointer;
+}
+
 
 /* SECCION SLIDERS */
 
@@ -308,6 +362,10 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     font-family: 'Montserrat', sans-serif;
+  }
+
+  .slider-label{
+    color: #FFD401;
   }
 
   .variable-text {
@@ -380,17 +438,32 @@ body {
   }
 
   .btn{
-    color: #FFD401;;
+    color: #FFD401;
     height: 60px;
-    border: 1px solid #FFD401;;
+    border: 1px solid #FFD401;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
   }
 
   .btn:hover{ 
         color: #000;
-        background-color: #FFD401;;
-        border-color: #FFD401;;
+        background-color: #FFD401;
+        border-color: #FFD401;
+    }
+
+
+    .form-btn{
+        background-color: #FFD401;
+        color: #000;
+        height: 60px;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .form-btn:hover{ 
+        color: #FFD401;
+        background-color: rgb(33 37 41);
+        border-color: #FFD401;
     }
 
     /* SECCION EFECTO LETRAS Aa */
@@ -400,6 +473,7 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        margin-bottom: 5rem;
     }
     
     .text-container,
@@ -418,11 +492,6 @@ body {
         transition: transform 0.3s ease;
     }
     
-    .container {
-        color: white;
-    }
-
-
     /* Define specific positions for each line */
     .line:nth-child(1)  { left: 4%;  height: 15%; bottom: 0%; }
     .line:nth-child(2)  { left: 6%; height: 20%; bottom: 0%; }
@@ -554,12 +623,33 @@ body {
     
 
 
+.link-blog{
+    color: #FFD401;
+    height: 60px;
+    border: 1px solid #FFD401;;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.link-blog:hover{ 
+    color: #000;
+    background-color: #FFD401;;
+    border-color: #FFD401;;
+}
 
+footer{
+    background-color: #FFD401;
+    color: #1a1a1a;
+}
 
-
-
-
+footer a{
+    text-decoration: none;
+}
 
 
 
