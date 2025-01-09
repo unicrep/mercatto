@@ -220,26 +220,70 @@ $(document).ready(function() {
   
   
   
-  $(document).ready(function () {
+//   $(document).ready(function () {
       
-      // Mousemove effect
-      $(document).mousemove(function (e) {
-        const mouseX = e.pageX;
-        const mouseY = e.pageY;
+//       // Mousemove effect
+//       $(document).mousemove(function (e) {
+//         const mouseX = e.pageX;
+//         const mouseY = e.pageY;
   
-        $('.line').each(function () {
-          const offset = $(this).offset();
-          const lineX = offset.left + $(this).width() / 2;
-          const lineY = offset.top + $(this).height() / 2;
+//         $('.line').each(function () {
+//           const offset = $(this).offset();
+//           const lineX = offset.left + $(this).width() / 2;
+//           const lineY = offset.top + $(this).height() / 2;
   
-          const distance = Math.sqrt(
-            Math.pow(mouseX - lineX, 2) + Math.pow(mouseY - lineY, 2)
-          );
+//           const distance = Math.sqrt(
+//             Math.pow(mouseX - lineX, 2) + Math.pow(mouseY - lineY, 2)
+//           );
   
-          const maxDistance = 150;
-          const moveDistance = Math.max(0, maxDistance - distance) / 5;
+//           const maxDistance = 150;
+//           const moveDistance = Math.max(0, maxDistance - distance) / 5;
   
-          $(this).css('transform', `translateY(${mouseY < lineY ? -moveDistance : moveDistance}px)`);
+//           $(this).css('transform', `translateY(${mouseY < lineY ? -moveDistance : moveDistance}px)`);
+//         });
+//       });
+//     });
+
+
+$(document).ready(function () {
+    // Función para comprobar el tamaño de la pantalla y habilitar/deshabilitar el efecto
+    function applyMouseEffect() {
+      if ($(window).width() >= 768) {
+        // Activar el efecto
+        $(document).mousemove(function (e) {
+          const mouseX = e.pageX;
+          const mouseY = e.pageY;
+  
+          $('.line').each(function () {
+            const offset = $(this).offset();
+            const lineX = offset.left + $(this).width() / 2;
+            const lineY = offset.top + $(this).height() / 2;
+  
+            const distance = Math.sqrt(
+              Math.pow(mouseX - lineX, 2) + Math.pow(mouseY - lineY, 2)
+            );
+  
+            const maxDistance = 150;
+            const moveDistance = Math.max(0, maxDistance - distance) / 5;
+  
+            $(this).css(
+              'transform',
+              `translateY(${mouseY < lineY ? -moveDistance : moveDistance}px)`
+            );
+          });
         });
-      });
+      } else {
+        // Desactivar el efecto eliminando el evento mousemove
+        $(document).off('mousemove');
+        $('.line').css('transform', ''); // Resetea cualquier transformación aplicada
+      }
+    }
+  
+    // Ejecutar la función inicialmente
+    applyMouseEffect();
+  
+    // Volver a verificar cuando se redimensione la ventana
+    $(window).resize(function () {
+      applyMouseEffect();
     });
+  });

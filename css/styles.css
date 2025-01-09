@@ -657,7 +657,7 @@ footer a{
 @media (max-width: 576px) {
     #dynamic-letter {
         font-size: 60px;
-        transform: rotate(-90deg);
+        transform: none;
         transform-origin: right top;
         margin: 0 auto;
     }
@@ -670,7 +670,27 @@ footer a{
     .font-weight-buttons a {
         font-size: 14px;
         padding: 3px 10px;
+        
     }
+    .link-blog{
+        font-size: 1rem;
+    }
+
+    #letter-a-effect{
+margin-top: 2rem;
+    }
+
+    .text-container,
+    .text-container-2 {
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
+    .line {
+        width: 1px;
+        transform: none;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -681,6 +701,8 @@ footer a{
         flex-wrap: nowrap;
         justify-content: space-between;
     }
+
+    
 }
 
 
