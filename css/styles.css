@@ -61,6 +61,52 @@ body {
     position: relative; /* Posicionar para el fondo */
 }
 
+/* seccion de boton flotante */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    /* Asegura que esté por encima de todo */
+    display: flex;
+    flex-direction: column;
+        /* Organiza los hijos en columna */
+    align-items: center;
+        /* Centra los elementos horizontalmente */
+    text-align: center;
+        /* Centra el texto debajo de la imagen */
+
+}
+
+
+.floating-button img {
+    width: 50px;
+    /* Ajusta el tamaño según necesites */
+    height: 50px;
+    /* Ajusta el tamaño según necesites */
+    border: none;
+    cursor: pointer;
+}
+
+.floating-button img:hover {
+    opacity: 0.8;
+    /* Efecto hover */
+}
+
+.floating-button span {
+    margin-top: 5px;
+    /* Espacio entre la imagen y el texto */
+    font-size: 14px;
+    /* Ajusta el tamaño de la fuente según necesites */
+    color: #FFD401;
+    /* Color del texto, puedes cambiarlo según el diseño */
+    text-decoration: underline;
+            /* Asegura que haya subrayado */
+    text-decoration-color: #FFD401;
+            /* Cambia el color del subrayado */
+
+}
+
 /* Estilos del H1 */
 #dynamic-letter {
     font-size: 90px; /* Ajuste para tamaño móvil */
