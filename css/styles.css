@@ -2,6 +2,7 @@ body {
     background-color: rgb(33 37 41);
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    
 
 }
 
@@ -551,6 +552,11 @@ body {
     .text-container-2 .line:nth-child(57) { left: 30%; height: 20%; bottom: 60%; }
     .text-container-2 .line:nth-child(58) { left: 28%; height: 15%; bottom: 60%; }
     
+
+
+
+
+
 
 
 
