@@ -8,7 +8,7 @@ $(document).ready(function () {
         }
     });
 
-    const text = "Bricolage Grotesque";
+    const text = "MERCATTO";
     const dynamicLetter = $("#dynamic-letter");
 
     // Inicializamos el texto como letras individuales
