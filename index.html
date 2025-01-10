@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="IMG/icono_mercato.png">
     <title>MERCATTO</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,7 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Incluir Normalize CSS -->
     <link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css">
-  
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- Incluir Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
   
@@ -50,7 +54,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="#intro-tipografia">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tipografias">Tipografías</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
@@ -126,7 +130,7 @@
                 <div class="hover-area bg-basteleur-bold">
                     <div class="content">
                         <span>Basteleur Bold</span>
-                        <span class="hover-child">See More</span>
+                        <span class="hover-child">Download</span>
                     </div>
                     <div class="background"></div>
                 </div>
@@ -135,7 +139,7 @@
                 <div class="hover-area bg-outward-round">
                     <div class="content">
                         <span>Outward Round</span>
-                        <span class="hover-child">See More</span>
+                        <span class="hover-child">Download</span>
                     </div>
                     <div class="background"></div>
                 </div>
@@ -146,7 +150,7 @@
                 <div class="hover-area bg-pilowlava-regular">
                     <div class="content">
                         <span>Pilowlava Regular</span>
-                        <span class="hover-child">See More</span>
+                        <span class="hover-child">Download</span>
                     </div>
                     <div class="background"></div>
                 </div>
@@ -155,13 +159,20 @@
                 <div class="hover-area bg-basteleur-moonlight">
                     <div class="content">
                         <span>Basteleur Moonlight</span>
-                        <span class="hover-child">See More</span>
+                        <span class="hover-child">Download</span>
                     </div>
                     <div class="background"></div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Su descarga comenzará en breves.</p>
+        </div>
+    </div>
 
     
   
@@ -202,6 +213,7 @@
 
     <!-- SECCION SLIDERS -->
     <section id="variable">
+        <h2 class="text-center mb-4">Slider Interactivo</h2>
         <div class="variable-text" id="variableText">
           <span>V</span>
           <span>A</span>
@@ -238,6 +250,89 @@
             <button type="button" class="btn" id="fontInter">Inter</button>
         </div>
       </section>
+
+    
+
+
+
+
+    <!-- Sección de Galería -->
+    <section id="galeria" class="py-5 bg-dark text-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Blog</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card bg-dark text-light border-0">
+                        <video src="IMG/Outlines.mp4" class="card-img-top" alt="Proyecto 1" autoplay muted loop ></video>
+                        <!-- <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Proyecto 1"> -->
+                        <div class="card-body">
+                            <h5 class="card-title">OUTLINES</h5>
+                            <p class="card-text">Este video explora la relación entre la tipografía y las formas generadas 
+                                a través del movimiento de sus contornos. Mediante líneas dinámicas y 
+                                fluidas, se construyen y deconstruyen letras, 
+                                creando una narrativa visual en constante transformación. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark text-light border-0">
+                        <video src="IMG/animacion2.mp4" class="card-img-top" alt="Proyecto 2" autoplay muted loop ></video>
+                        <div class="card-body">
+                            <h5 class="card-title">KULTURSTADT HANNOVER</h5>
+                            <p class="card-text">De esta metamorfosis tipográfica, surge un símbolo: 
+                                un logotipo que encapsula el equilibrio entre la simplicidad y la 
+                                complejidad. Es la manifestación de una identidad que nace del movimiento,
+                                uniendo las formas en una pieza única que respira modernidad y dinamismo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <a href="https://mercattoblog.cargo.site/" class="link-blog">Descubre más proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Sobre Nosotros</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="IMG/mercatto2.jpg" alt="Sobre Nosotros" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <p>En FontMarket nos especializamos en ofrecer tipografías de alta calidad que inspiran y potencian tus proyectos creativos.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contacto</h2>
+            <form id="contact-form" class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nombre" class="form-label">Tu Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Tu Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Tu Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn form-btn">Enviar</button>
+            </form>
+        </div>
+    </section>
 
     <!-- SECCION EFECTO LETRAS Aa -->
     <section id="letter-a-effect">
@@ -378,76 +473,6 @@
         </div>
     </section>
 
-
-
-
-    <!-- Sección de Galería -->
-    <section id="galeria" class="py-5 bg-dark text-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Galería</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card bg-dark text-light border-0">
-                        <video src="IMG/Outlines.mp4" class="card-img-top" alt="Proyecto 1" autoplay muted loop ></video>
-                        <!-- <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Proyecto 1"> -->
-                        <div class="card-body">
-                            <h5 class="card-title">Proyecto 1</h5>
-                            <p class="card-text">Descripción del proyecto 1.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card bg-dark text-light border-0">
-                        <video src="IMG/animacion2.mp4" class="card-img-top" alt="Proyecto 2"></video>
-                        <div class="card-body">
-                            <h5 class="card-title">Proyecto 2</h5>
-                            <p class="card-text">Descripción del proyecto 2.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Sobre Nosotros -->
-    <section id="sobre-nosotros" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Sobre Nosotros</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>En FontMarket nos especializamos en ofrecer tipografías de alta calidad que inspiran y potencian tus proyectos creativos.</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="IMG/mercatto2.jpg" alt="Sobre Nosotros" class="img-fluid rounded">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Contacto -->
-    <section id="contacto" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Contacto</h2>
-            <form id="contact-form" class="needs-validation" novalidate>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="nombre" class="form-label">Tu Nombre</label>
-                        <input type="text" class="form-control" id="nombre" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Tu Email</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="mensaje" class="form-label">Tu Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-4">
         <div class="container">
@@ -459,16 +484,16 @@
                 <!-- Redes Sociales -->
                 <div class="col-12">
                     <a href="https://facebook.com" target="_blank" class="mx-2 text-light" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
+                        <i class="fa-brands fa-facebook-f" style="color: #FFD401;"></i>
                     </a>
                     <a href="https://twitter.com" target="_blank" class="mx-2 text-light" aria-label="Twitter">
-                        <i class="bi bi-twitter"></i>
+                        <i class="fa-brands fa-x-twitter" style="color: #FFD401;"></i>
                     </a>
                     <a href="https://instagram.com" target="_blank" class="mx-2 text-light" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
+                        <i class="fa-brands fa-instagram" style="color: #FFD401;"></i>
                     </a>
                     <a href="https://linkedin.com" target="_blank" class="mx-2 text-light" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i>
+                        <i class="fa-brands fa-linkedin-in" style="color: #FFD401;"></i>
                     </a>
                 </div>
             </div>
