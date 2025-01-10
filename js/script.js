@@ -14,32 +14,25 @@ $(document).ready(function () {
     // Inicializamos el texto como letras individuales
     dynamicLetter.html(text.split('').map(letter => `<span>${letter}</span>`).join(''));
 
-    // Función para mostrar letras al hacer scroll y cambiar peso dinámico
+    // Animación con GSAP para mostrar letras al hacer scroll
     $(window).on("scroll", function () {
         const elementTop = dynamicLetter.offset().top;
         const elementBottom = elementTop + dynamicLetter.height();
         const viewportTop = $(window).scrollTop();
         const viewportBottom = viewportTop + $(window).height();
-        const maxScroll = $(window).height(); // Usamos la altura de la ventana como referencia
 
         if (elementBottom > viewportTop && elementTop < viewportBottom) {
-            // Animación letra a letra
-            dynamicLetter.find('span').each(function (index) {
-                $(this).addClass('visible').css('transition-delay', `${index * 0.05}s`);
-            });
-
-            // Cálculo del peso dinámico
-            const scrollTop = $(window).scrollTop();
-            const weightRange = [300, 800]; // Pesos de Montserrat (Light a Extra Bold)
-            let calculatedWeight = weightRange[0] + ((weightRange[1] - weightRange[0]) * scrollTop) / maxScroll;
-
-            // Limitar el peso al rango permitido
-            calculatedWeight = Math.min(weightRange[1], Math.max(weightRange[0], calculatedWeight));
-
-            // Aplicar el peso dinámico
-            dynamicLetter.css({
-                "font-variation-settings": `'wght' ${calculatedWeight}`
-            });
+            gsap.fromTo(
+                "#dynamic-letter span",
+                { opacity: 0, y: 20 }, // Estado inicial
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.1, // Retraso entre cada letra
+                    ease: "power2.out"
+                }
+            );
         }
     });
 
@@ -55,17 +48,15 @@ $(document).ready(function () {
     $(window).trigger("scroll");
 });
 
-
-
 $(document).ready(function () {
-            const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
-            const container = $(".glyph-container");
-            const largeGlyph = $("#largeGlyph");
+    const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿΩ";
+    const container = $(".glyph-container");
+    const largeGlyph = $("#largeGlyph");
 
-            // Rellenar los glifos
-            for (let glyph of glyphs) {
-                container.append(`<div class='glyph-item'>${glyph}</div>`);
-            }
+    // Rellenar los glifos
+    for (let glyph of glyphs) {
+        container.append(`<div class='glyph-item'>${glyph}</div>`);
+    }
 
     // Cambiar el glifo grande al hacer clic
     $(".glyph-item").on("click", function () {
@@ -98,7 +89,6 @@ $(document).ready(function() {
         }
     );
 });
-
 
 $(document).ready(function () {
     console.log("jQuery cargado correctamente.");
@@ -158,45 +148,40 @@ $(document).ready(function() {
     const $letters = $('#variableText span');
     const $weightValue = $('#weightValue');
     const $sizeValue = $('#sizeValue');
-  
+
     // Cambiar peso de la tipografía
     $weightSlider.on('input', function() {
-      const weight = $(this).val();
-      $letters.each(function() {
-        $(this).css('font-variation-settings', `'wght' ${weight}`);
-      });
-      $weightValue.text(weight);
+        const weight = $(this).val();
+        $letters.each(function() {
+            $(this).css('font-variation-settings', `'wght' ${weight}`);
+        });
+        $weightValue.text(weight);
     });
-  
+
     // Cambiar tamaño de la tipografía
     $sizeSlider.on('input', function() {
-      const size = $(this).val();
-      $letters.each(function() {
-        $(this).css('font-size', `${size}px`);
-      });
-      $sizeValue.text(size);
+        const size = $(this).val();
+        $letters.each(function() {
+            $(this).css('font-size', `${size}px`);
+        });
+        $sizeValue.text(size);
     });
-  
+
     // Cambiar la fuente
     $('#fontRoboto').on('click', function() {
-      $letters.css('font-family', 'Roboto Flex, sans-serif');
+        $letters.css('font-family', 'Roboto Flex, sans-serif');
     });
-  
+
     $('#fontRecursive').on('click', function() {
-      $letters.css('font-family', 'Recursive, sans-serif');
+        $letters.css('font-family', 'Recursive, sans-serif');
     });
-  
+
     $('#fontInter').on('click', function() {
         $letters.css('font-family', 'Inter, sans-serif');
-      });
-  });
+    });
+});
 
-
-
-
-
-
-  $(document).ready(function () {
+$(document).ready(function () {
     // Mostrar el modal al hacer clic en .hover-child
     $('.hover-child').on('click', function () {
         $('#confirmationModal').fadeIn();
@@ -214,76 +199,46 @@ $(document).ready(function() {
         }
     });
 });
-  
-  
-  
-  
-  
-  
-//   $(document).ready(function () {
-      
-//       // Mousemove effect
-//       $(document).mousemove(function (e) {
-//         const mouseX = e.pageX;
-//         const mouseY = e.pageY;
-  
-//         $('.line').each(function () {
-//           const offset = $(this).offset();
-//           const lineX = offset.left + $(this).width() / 2;
-//           const lineY = offset.top + $(this).height() / 2;
-  
-//           const distance = Math.sqrt(
-//             Math.pow(mouseX - lineX, 2) + Math.pow(mouseY - lineY, 2)
-//           );
-  
-//           const maxDistance = 150;
-//           const moveDistance = Math.max(0, maxDistance - distance) / 5;
-  
-//           $(this).css('transform', `translateY(${mouseY < lineY ? -moveDistance : moveDistance}px)`);
-//         });
-//       });
-//     });
-
 
 $(document).ready(function () {
     // Función para comprobar el tamaño de la pantalla y habilitar/deshabilitar el efecto
     function applyMouseEffect() {
-      if ($(window).width() >= 768) {
-        // Activar el efecto
-        $(document).mousemove(function (e) {
-          const mouseX = e.pageX;
-          const mouseY = e.pageY;
-  
-          $('.line').each(function () {
-            const offset = $(this).offset();
-            const lineX = offset.left + $(this).width() / 2;
-            const lineY = offset.top + $(this).height() / 2;
-  
-            const distance = Math.sqrt(
-              Math.pow(mouseX - lineX, 2) + Math.pow(mouseY - lineY, 2)
-            );
-  
-            const maxDistance = 150;
-            const moveDistance = Math.max(0, maxDistance - distance) / 5;
-  
-            $(this).css(
-              'transform',
-              `translateY(${mouseY < lineY ? -moveDistance : moveDistance}px)`
-            );
-          });
-        });
-      } else {
-        // Desactivar el efecto eliminando el evento mousemove
-        $(document).off('mousemove');
-        $('.line').css('transform', ''); // Resetea cualquier transformación aplicada
-      }
+        if ($(window).width() >= 768) {
+            // Activar el efecto
+            $(document).mousemove(function (e) {
+                const mouseX = e.pageX;
+                const mouseY = e.pageY;
+
+                $('.line').each(function () {
+                    const offset = $(this).offset();
+                    const lineX = offset.left + $(this).width() / 2;
+                    const lineY = offset.top + $(this).height() / 2;
+
+                    const distance = Math.sqrt(
+                        Math.pow(mouseX - lineX, 2) + Math.pow(mouseY - lineY, 2)
+                    );
+
+                    const maxDistance = 150;
+                    const moveDistance = Math.max(0, maxDistance - distance) / 5;
+
+                    $(this).css(
+                        'transform',
+                        `translateY(${mouseY < lineY ? -moveDistance : moveDistance}px)`
+                    );
+                });
+            });
+        } else {
+            // Desactivar el efecto eliminando el evento mousemove
+            $(document).off('mousemove');
+            $('.line').css('transform', ''); // Resetea cualquier transformación aplicada
+        }
     }
-  
+
     // Ejecutar la función inicialmente
     applyMouseEffect();
-  
+
     // Volver a verificar cuando se redimensione la ventana
     $(window).resize(function () {
-      applyMouseEffect();
+        applyMouseEffect();
     });
-  });
+});
