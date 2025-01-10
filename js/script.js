@@ -58,10 +58,17 @@ $(document).ready(function () {
         container.append(`<div class='glyph-item'>${glyph}</div>`);
     }
 
-    // Cambiar el glifo grande al hacer clic
+    // Cambiar el glifo grande al hacer clic y aplicar animación GSAP
     $(".glyph-item").on("click", function () {
         const selectedGlyph = $(this).text();
         largeGlyph.val(selectedGlyph);
+
+        // GSAP animación para el glifo clicado
+        gsap.fromTo(
+            this,
+            { scale: 0, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)" }
+        );
     });
 
     // Cambiar peso de fuente
